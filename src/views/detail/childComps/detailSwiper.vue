@@ -1,8 +1,8 @@
 <template>
-  <swiper ref="swiper" v-if="banners.length">
+  <swiper ref="swiper" v-if="banners.length" class="detail-swiper">
     <swiper-item v-for="(item, index) in banners" :key="index">
       <a :href="item.link">
-        <img :src="item.image" alt="" @load.once="imageLoad">
+        <img :src="item" alt="" @load.once="imageLoad">
       </a>
     </swiper-item>
   </swiper>
@@ -12,7 +12,7 @@
   import {Swiper, SwiperItem} from 'components/common/swiper/index.js'
 
 	export default {
-		name: "HomeSwiper",
+		name: "DetailSwiper",
     components: {
 		  Swiper,
       SwiperItem
@@ -40,5 +40,8 @@
 </script>
 
 <style scoped>
-
+  .detail-swiper{
+    height: 300px;
+    overflow: hidden;
+  }
 </style>
